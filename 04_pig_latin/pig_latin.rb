@@ -1,12 +1,32 @@
 def translate(word)
-  vowels = ["a", "e", "i", "o", "u"]
-
-
-  # if vowels.include?(word[0])
+  if word.include?(" ")
+    word_array = word.split(" ")
+    new_word_array = []
+    word_array.each do |x|
+      new_word_array.push(single_word(x))
+    end
+    final_string = new_word_array.join(" ")
     
-  #   word = word<<"ay"
 
-  # else
+
+
+    #   if index > 0
+    #     new_word += " "
+    #   end
+    #    new_word += single_word(w)
+    #   end
+    #   new_word
+    # end
+  else single_word(word)
+  end
+end
+
+
+
+def single_word(word)
+  vowels = ["a", "e", "i", "o"]
+
+
     temp=[]
     c = "ay"
     
@@ -19,11 +39,11 @@ def translate(word)
         temp.push(first)
         letter_array.shift
        first = letter_array[0]
-     end
+      end
 
     end while !vowels.include?(first)
     
-    a = temp.join("")
+    a = temp.join("") #not vowels
     b = letter_array.join("")
     together(a,b,c)
   end
@@ -32,4 +52,8 @@ def together(a,b,c)
  b+a+c 
 end
 
-translate("apple")
+
+
+
+
+ puts translate("apple cherry")

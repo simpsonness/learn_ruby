@@ -13,3 +13,11 @@ def reverser
   end
     result
 end
+
+def adder(v=1)
+  yield + v
+end
+
+def repeater(n=1)
+  n.times{yield}
+end
